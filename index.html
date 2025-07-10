@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braeden Allen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #41ea24, #055809);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .dark-mode {
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+        }
+        
+        .dark-mode .text-gray-800 {
+            color: #f7fafc;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="font-mono bg-command-50 transition-colors duration-300"> 
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 shadow-lg">
+        <i class="fas fa-moon text-gray-800 dark:text-yellow-300"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Braeden Allen</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 dark:text-white hover:text-green-500 transition">Home</a>
+                    <a href="#about" class="text-gray-800 dark:text-white hover:text-green-500 transition">About</a>
+                    <a href="#skills" class="text-gray-800 dark:text-white hover:text-green-500 transition">Skills</a>
+                    <a href="#projects" class="text-gray-800 dark:text-white hover:text-green-500 transition">Projects</a>
+                    <a href="#currently" class="text-gray-800 dark:text-white hover:text-green-500 transition">What's New</a>
+                    <a href="#Resume" class="text-gray-800 dark:text-white hover:text-green-500 transition">Resume</a>
+                    <a href="#contact" class="text-gray-800 dark:text-white hover:text-green-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-gray-800 dark:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 pb-4 px-4">
+            <a href="#home" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">Home</a>
+            <a href="#about" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">About</a>
+            <a href="#skills" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">Projects</a>
+            <a href="#currently" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">current</a>
+            <a href="#resume" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">Resume</a>
+            <a href="#contact" class="block py-2 text-gray-800 dark:text-white hover:text-green-500 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+        <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-800 dark:text-white">
+                    Hi, I'm <span class="gradient-text">Braeden</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 delay-1 fade-in">
+                    Cybersecurity Strategist | Creative Technologist | Problem Solver
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 delay-2 fade-in">
+                    Applying a creative, security-first mindset to solve complex problems and protect critical data in cyberspace.
+                </p>
+                <div class="flex justify-center space-x-4 delay-3 fade-in">
+                    <a href="#contact" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md">
+                        Contact Me
+                    </a>
+                    <a href="#projects" class="px-6 py-3 border border-green-600 text-green-600 dark:text-green-400 dark:border-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700 transition">
+                        View Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-green-500 shadow-lg">
+                            <img src="https://github.com/braeden-allen/braeden-allen.github.io/blob/main/assets/SoloShot.JPG"
+                                 alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md">
+                            <span class="font-medium">Braeden Allen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
+                        Who am I?
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        My journey into cybersecurity began with the thrill of my first successful PWN on TryHackMe, a moment that solidified my passion for the field and set me on my current academic path. I am a fourth-year undergraduate at the University of New Haven, pursuing a Bachelor of Science in Computer Science with a concentration in Cybersecurity. My studies are focused within the prestigious NSA Cyber Operations track, a rigorous program that has provided me with a deep, practical understanding of both offensive and defensive security principles, secure coding practices, and the architecture of modern digital systems.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        My problem-solving approach combines my technical experience in both red and blue team operations with a creative outlook. This allows me to deliver solutions that are secure-by-design and aligned with the most current industry security frameworks. I am committed to continuous learning to stay adaptable in the fast-paced world of cybersecurity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+                My <span class="gradient-text">Skills</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 card-hover">
+                    <div class="text-red-500 mb-4">
+                        <i class="fas fa-crosshairs text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Offensive Security</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Testing system security utilizing published frameworks and tools.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Wireshark</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Scripting</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Enumeration</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Burpsuite</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Password Cracking</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 card-hover">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-lock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Defensive Security</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Analyzing system activity and logs to detect, investigate and respond to security threats.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Log Analysis</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Digital Forensics</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Cryptography</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">NIST Framework</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">System Administration</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all duration-300 card-hover">
+                    <div class="text-green-500 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Cybersecurity Foundations & Engineering</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Building and administering secure systems and automating tasks through programming, networking, and systems expertise.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">C/C++</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">SQL</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Linux</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Windows</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">OSI & TCP/IP Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1614064643087-96ce7f0737c8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Project 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Smarter Wordlists</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A command line tool that levrages AI and machine learning to assist in OSINT propcesses.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs">Python</span>
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs">LLMs</span>
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs">Web Scraping</span>
+                            </div>
+                            <a href="#" class="text-red-500 hover:text-red-700 dark:hover:text-red-400 transition">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Project 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Personal Prtfolio Website</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A personal site that highlights my personality, projects, achievements and aspirations.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">HTML</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">CSS</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Steganography ;)</span>
+
+                            </div>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1682146029185-198922bd8350?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Project 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Cybersecuirty Home Lab</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            The creation of three machines (2 Linux, 1 Windows), used for penetration testing and system patching and administration
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Linux</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Windows</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">System Administration</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Virtualization</span>
+
+                            </div>
+                            <a href="#" class="text-green-500 hover:text-green-700 dark:hover:text-green-400 transition">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-6 py-3 border border-green-600 text-green-600 dark:text-green-400 dark:border-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-gray-700 transition">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I am currently working on-->
+    <section id="currently" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+            What I'm Currently Focused On
+        </h2>
+        
+        <div class="flex flex-col md:flex-row justify-center gap-8">
+
+            <div class="w-full md:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div class="p-4 bg-blue-100 dark:bg-blue-900 rounded-full mb-4">
+                    <svg class="w-8 h-8 text-blue-500 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                    Project: Smarter Wordlists
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                Leveraging AI to generate highly targeted and intelligent password lists that enhance OSINT 
+                investigations and inform stronger password policy development.                
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div class="p-4 bg-green-100 dark:bg-green-900 rounded-full mb-4">
+                     <svg class="w-8 h-8 text-green-500 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                    Learning: Certifications
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Studying for the CompTIA Security+ to better establish myself as a security professional. My testing dtya is set for August 2025
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div class="p-4 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+                    <svg class="w-8 h-8 text-purple-500 dark:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                    Systems Administration and Patching in Linux
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Actively enrolled in Red Hat Enterprise courses in System Administration and Automation (RH124, RH134, RH294). Set to be completed August 2025
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Resume -->
+    <section id="Resume" class="py-20 bg-white dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+            My Professional Profile
+        </h2>
+        
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-2/3">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
+                    About Me
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">
+                    I'm a passionate and results-driven aspiring cybersecurity professional with a talent for leveraging 
+                    cutting-edge technologies to solve real-world challenges. My goal is to apply my experience in both offensive and 
+                    defensive cybersecurity to build innovative solutions that stay ahead of the adversary.
+                </p>
+
+                <h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white">Core Competencies:</h4>
+                <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 mb-8 space-y-2">
+                    <li>Scripting and Automation (Python, Bash)</li>
+                    <li>Offensive Security Practices (PenTesting, Enumeration, Web Exploitation)</li>
+                    <li>Defensive Security Practices (Log Analysis, System Hardening)</li>
+                    <li>Networking (TCP/IP, OSI, Wireless Security, Network Configuration)</li>
+                </ul>
+
+                <a href="https://github.com/braeden-allen/braeden-allen.github.io/blob/main/assets/Braeden_Allen_Official_Resume.pdf"
+                   download
+                   class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    Download Full Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+                Get In <span class="gradient-text">Touch</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Feel free to reach out to me for any questions or opportunities, or just to connect. 
+                        I would love to hear your thoughts. I'll get back to you as soon as possible.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-500 dark:text-green-300"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">New Haven, Connecticut</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-500 dark:text-green-300"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">braeden.allen.applications@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-green-500 dark:text-green-300"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+1 860 597 9231</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.github.com/braeden-allen" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/braeden-allen" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/braeden.allen_/" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <form class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold gradient-text">Braeden Allen</span>
+                    <p class="text-gray-400 mt-2">© 2025 Braeden Allen. All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.github.com/braeden-allen" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/braeden-allen" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/braeden.allen_/" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            html.classList.add('dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun text-yellow-300"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun text-yellow-300"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon text-gray-800"></i>';
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add fade-in animation to elements when they come into view
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
