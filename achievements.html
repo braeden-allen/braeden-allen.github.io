@@ -4,44 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Achievements | Braeden Allen</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">  
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS for animations */
+        /* Base Custom CSS */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
         }
-        
         .gradient-text {
             background: linear-gradient(90deg, #41ea24, #055809);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
-        /* This style is for the status badges on achievement cards */
         .status-badge {
             position: absolute;
             top: 1rem;
             right: 1rem;
         }
+        .card-hover:hover .status-badge {
+            opacity: 0;
+        }
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            transition: opacity 0.1s ease-in-out;
+        }
     </style>
 </head>
-<body class="font-mono bg-white dark:bg-gray-900 transition-colors duration-300"> 
+<body class="font-mono bg-white dark:bg-gray-900 transition-colors duration-300">
+
     <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 shadow-lg">
         <i class="fas fa-moon text-gray-800 dark:text-yellow-300"></i>
     </button>
@@ -61,73 +66,161 @@
     <section id="all-achievements" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
-                All <span class="gradient-text">Achievements</span>
+                All <span class="gradient-text">Achievements, Accolades and Certifications</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
-                    <span class="status-badge px-2 py-1 bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-semibold">Certified</span>
+                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover flex flex-col">
+                    <span class="status-badge px-2 py-1 bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-semibold">Accolade</span>
                     <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1470&auto=format&fit=crop" 
-                             alt="CompTIA Security+ Certification" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1470&auto=format&fit=crop"
+                             alt="University Award" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">CompTIA Security+</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">A global certification validating baseline skills for core security functions and an IT career.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-xs">Cybersecurity</span>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+                            CS Undergraduate of the Year (2024-25)
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                            Recognized by the Engineering Department for exceptional academic performance, leadership, and contributions to the field of computer science.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Academics</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Leadership</span>
                             </div>
-                            <a href="#" class="text-yellow-500 hover:text-yellow-700 dark:hover:text-yellow-400 transition"><i class="fas fa-certificate"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
-                    <span class="status-badge px-2 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-xs font-semibold">Awarded</span>
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556742517-57221448b139?q=80&w=1470&auto=format&fit=crop" 
-                             alt="CTF Competition Winner" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">National CTF Winner</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Placed 1st in the National Cyber League (NCL) Capture the Flag (CTF) competition, competing against thousands.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Problem Solving</span>
-                            </div>
-                            <a href="#" class="text-purple-500 hover:text-purple-700 dark:hover:text-purple-400 transition"><i class="fas fa-trophy"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
-                    <span class="status-badge px-2 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-xs font-semibold">Awarded</span>
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1470&auto=format&fit=crop" 
-                             alt="Dean's List" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Dean's List Honoree</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Consistently recognized on the Dean's List for outstanding academic excellence and maintaining a high GPA.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs">Academics</span>
-                            </div>
-                            <a href="#" class="text-indigo-500 hover:text-indigo-700 dark:hover:text-indigo-400 transition"><i class="fas fa-graduation-cap"></i></a>
+                            <a href="https://www.newhaven.edu/engineering/annual-student-awards/index.php" target="_blank" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition ml-2">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover">
-                    <span class="status-badge px-2 py-1 bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-semibold">Certified</span>
+                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover flex flex-col">
+                    <span class="status-badge px-2 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-xs font-semibold">Achievement</span>
                     <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1618788372246-79faff04d84f?q=80&w=1470&auto=format&fit=crop"
-                             alt="Google IT Support Certificate" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <img src="https://images.unsplash.com/flagged/photo-1578928534298-9747fc52ec97?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                             alt="CTF Competition Runner-Up" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Google IT Support</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Completed Google's professional certificate program covering the fundamentals of IT support.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Hacking Club CTF High Achiever</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                            Placed 2nd in the semester-long Hacking Club CTF, demonstrating skills in cryptography, forensics, and problem-solving.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Problem Solving</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">CTF</span>
+                            </div>
+                            <a href="#" class="text-green-500 hover:text-green-700 dark:hover:text-green-400 transition ml-2"><i class="fas fa-trophy"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover flex flex-col">
+                    <span class="status-badge px-2 py-1 bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-semibold">Accolade</span>
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1470&auto=format&fit=crop"
+                             alt="Dean's List" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Dean's List Honoree</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                            Consistently recognized on the Dean's List for outstanding academic excellence and maintaining a high GPA.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-xs">Academics</span>
+                            </div>
+                            <a href="#" class="text-indigo-500 hover:text-indigo-700 dark:hover:text-indigo-400 transition ml-2"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover flex flex-col">
+                    <span class="status-badge px-2 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full text-xs font-semibold">Achievement</span>
+                    
+                    <div class="h-48 overflow-hidden flex justify-center items-center bg-gray-900 p-4">
+                        <img src="https://www.hackthebox.com/images/logo-htb.svg" 
+                            alt="Hack The Box Logo" class="w-2/3 h-auto object-contain">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">Hack The Box Achievements</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                            Actively honing offensive security skills by tackling diverse challenges and virtual machines on 
+                            the HTB platform.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Penetration Testing</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">CTF</span>
+                            </div>
+                            <a href="https://app.hackthebox.com/users/profile/1856053" target="_blank" class="text-green-500 hover:text-green-700 dark:hover:text-green-400 transition ml-2">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 card-hover flex flex-col">
+                    <span class="status-badge px-2 py-1 bg-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 rounded-full text-xs font-semibold">Certifications</span>
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1470&auto=format&fit=crop"
+                             alt="In Progress" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-white">More To come Soon</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                            I aim to secure more certifications in the upcoming weeks, including CompTIA Security+
+                            and System Administration certifications.
+                        </p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <a href="#" class="text-yellow-500 hover:text-yellow-700 dark:hover:text-yellow-400 transition ml-2"><i class="fas fa-award"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold gradient-text">Braeden Allen</span>
+                    <p class="text-gray-400 mt-2">© 2025 Braeden Allen. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.github.com/braeden-allen" class="text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/braeden-allen" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/braeden.allen_/" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            html.classList.add('dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun text-yellow-300"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun text-yellow-300"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon text-gray-800"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
