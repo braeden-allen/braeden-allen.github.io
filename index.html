@@ -123,8 +123,6 @@
         </div>
     </section>
 
-   
-
     <section id="about" class="py-20 bg-white dark:bg-gray-800">
     <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
@@ -144,56 +142,110 @@
                 </div>
             </div>
 
-            <div class="w-full md:w-2/3">
-                <div class="flex space-x-4 overflow-x-auto pb-4">
-                    <div class="flex-shrink-0 w-full md:w-5/6 bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-                            Biography
-                        </h3>
-                        <div class="h-64 overflow-y-auto">
-                            <p class="text-gray-600 dark:text-gray-300 mb-6">
-                                My journey into cybersecurity began with the thrill of my first successful PWN on TryHackMe,
-                                a moment that solidified my passion for the field and set me on my current academic path.
-                                I am a fourth-year undergraduate at the University of New Haven, pursuing a Bachelor of Science in
-                                Computer Science with a concentration in Cybersecurity. My studies are focused within the prestigious
-                                NSA Cyber Operations track, a rigorous program that has provided me with a deep, practical understanding
-                                of both offensive and defensive security principles, secure coding practices, and the architecture of modern digital systems.
-                            </p>
-                            <p class="text-gray-600 dark:text-gray-300">
-                                My problem-solving approach combines my technical experience in both red and blue team operations with
-                                a creative outlook. This allows me to deliver solutions that are secure-by-design and aligned with the most
-                                current industry security frameworks. I am committed to continuous learning to stay adaptable in the
-                                fast-paced world of cybersecurity.
-                            </p>
-                        </div>
+            <div class="w-full md:w-2/3 relative">
+                <button id="scroll-left-btn" class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-600 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-500 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div id="cards-container" class="flex space-x-4 overflow-x-hidden pb-4" style="scroll-behavior: smooth;">
+                    <div class="card flex-shrink-0 w-full bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Biography</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            My journey into cybersecurity began with the thrill of my first successful PWN on TryHackMe, a moment 
+                            that solidified my passion for the field and set me on my current academic path. I am a fourth-year undergraduate 
+                            at the University of New Haven, pursuing a Bachelor of Science in Computer Science with a concentration in Cybersecurity. 
+                            My studies are focused within the prestigious NSA Cyber Operations track, a rigorous program that has provided me 
+                            with a deep, practical understanding of both offensive and defensive security principles, secure coding practices, 
+                            and the architecture of modern digital systems.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            My problem-solving approach combines my technical experience in both red and blue team operations with a 
+                            creative outlook. This allows me to deliver solutions that are secure-by-design and aligned with the most 
+                            current industry security frameworks. I am committed to continuous learning to stay adaptable in the fast-paced 
+                            world of cybersecurity.
+                        </p>
                     </div>
 
-                    <div class="flex-shrink-0 w-full md:w-5/6 bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-                            Career Aspirations
-                        </h3>
-                        <div class="h-64 overflow-y-auto">
-                            <p class="text-gray-600 dark:text-gray-300">
-                                *(Here you can discuss your future career goals. For example, you could mention your interest in penetration testing, security analysis, or threat intelligence. You might also want to include any specific industries you're interested in, such as finance, healthcare, or government.)*
-                            </p>
-                        </div>
+                    <div class="card flex-shrink-0 w-full bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Career Aspirations</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            My future career aspirations are centered around becoming a leader in the cybersecurity field, 
+                            where I can leverage my skills to protect critical infrastructure and sensitive data. I find interest 
+                            in the field of offensive cybersecurity, particularly in penetration testing and vulnerability assessment,
+                            but I also enjoy the face paced and dynamic nature of defensive security operations. I aim to work in 
+                            roles that not only allow for me to bring my experience and expertise in fields to collectively solve 
+                            complex security challenges, but to also be in an environement where I am able to learn from others experience 
+                            in the field.
+                        </p>
                     </div>
 
-                    <div class="flex-shrink-0 w-full md:w-5/6 bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-                            Personal Interests
-                        </h3>
-                        <div class="h-64 overflow-y-auto">
-                            <p class="text-gray-600 dark:text-gray-300">
-                                *(This is a great place to showcase your personality. You could talk about your hobbies, projects you work on outside of your studies, or any clubs or organizations you're a part of. This helps potential employers or connections get a more well-rounded view of who you are.)*
-                            </p>
-                        </div>
+                    <div class="card flex-shrink-0 w-full bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Personal Interests</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Outside of my professional pursuits, I have built a brand for myself as a DJ. Music has always been an
+                            outlet for my creativity, and I enjoy the process of crafting an envrionement where people can bond and create
+                            memories over the music I play. 
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 mt-4">
+                            You can also find me watching sports, especially the latest premier league game (COYS), or exploring new 
+                            resturants and foods. I do also enjoy puzzles and learning in my free time, which has directly translated to my offensive 
+                            cyber skills in HackTheBox in a game like fashion, pivoting around the system in attempt to gain root access.
                     </div>
                 </div>
+
+                <button id="scroll-right-btn" class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-600 p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-500 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
 </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('cards-container');
+        const leftBtn = document.getElementById('scroll-left-btn');
+        const rightBtn = document.getElementById('scroll-right-btn');
+
+        if (container && leftBtn && rightBtn) {
+            const checkScroll = () => {
+                // Check if scroll is at the beginning
+                leftBtn.disabled = container.scrollLeft <= 0;
+
+                // Check if scroll is at the end
+                // A small buffer (1) is added to account for potential floating point inaccuracies
+                const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
+                rightBtn.disabled = isAtEnd;
+            };
+
+            const scroll = (direction) => {
+                const card = container.querySelector('.card');
+                if (card) {
+                    // Get card width and the gap (space-x-4 = 1rem = 16px)
+                    const scrollAmount = card.offsetWidth + 16;
+                    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
+            };
+
+            leftBtn.addEventListener('click', () => scroll(-1));
+            rightBtn.addEventListener('click', () => scroll(1));
+
+            // Use a ResizeObserver to re-check scroll on container resize
+            const observer = new ResizeObserver(checkScroll);
+            observer.observe(container);
+
+            // Also check on scroll (e.g., after smooth scroll finishes)
+            container.addEventListener('scroll', checkScroll);
+            
+            // Initial check
+            checkScroll();
+        }
+    });
+    </script>
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
@@ -441,98 +493,56 @@
     </div>
 </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800 dark:text-white">
-                Get In <span class="gradient-text">Touch</span>
-            </h2>
-            
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="w-full md:w-1/2">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-8">
-                        Feel free to reach out to me for any questions or opportunities, or just to connect. 
-                        I would love to hear your thoughts. I'll get back to you as soon as possible.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-green-500 dark:text-green-300"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
-                                <p class="text-gray-600 dark:text-gray-300">New Haven, Connecticut</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-green-500 dark:text-green-300"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
-                                <p class="text-gray-600 dark:text-gray-300">braeden.allen.applications@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
-                                <i class="fas fa-phone text-green-500 dark:text-green-300"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 dark:text-white">Phone</h4>
-                                <p class="text-gray-600 dark:text-gray-300">+1 860 597 9231</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-10">
-                        <h4 class="font-medium text-gray-800 dark:text-white mb-4">Follow Me</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.github.com/braeden-allen" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/braeden-allen" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://www.instagram.com/braeden.allen_/" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+            Get In <span class="gradient-text">Touch</span>
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. 
+            The best way to reach me is by email or through my social media channels.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12 mb-12">
+            <div class="flex items-center">
+                <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                    <i class="fas fa-map-marker-alt text-2xl text-green-500 dark:text-green-300"></i>
                 </div>
-                
-                <div class="w-full md:w-1/2">
-                    <form class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Your Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="subject" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
-                            Send Message
-                        </button>
-                    </form>
+                <div>
+                    <h4 class="text-lg font-medium text-gray-800 dark:text-white">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-300">New Haven, Connecticut</p>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <div class="bg-green-100 dark:bg-green-900 p-3 rounded-full mr-4">
+                    <i class="fas fa-envelope text-2xl text-green-500 dark:text-green-300"></i>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium text-gray-800 dark:text-white">Email</h4>
+                    <a href="mailto:braeden.allen.applications@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition">braeden.allen.applications@gmail.com</a>
                 </div>
             </div>
         </div>
+
+        <div>
+            <h4 class="text-xl font-medium text-gray-800 dark:text-white mb-6">Let's Connect</h4>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.github.com/braeden-allen" aria-label="GitHub" class="text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-white transition duration-300">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/braeden-allen" aria-label="LinkedIn" class="text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/braeden.allen_/" aria-label="Instagram" class="text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-white transition duration-300">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                 <a href="tel:+18605979231" aria-label="Phone" class="text-gray-500 dark:text-gray-400 hover:text-green-500 dark:hover:text-white transition duration-300">
+                    <i class="fas fa-phone fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     </section>
 
     <!-- Footer -->
