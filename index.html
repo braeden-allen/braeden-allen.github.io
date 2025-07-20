@@ -720,16 +720,14 @@
             fadeObserver.observe(element);
         });
 
-        // Hacker text effect
-        document.addEventListener('DOMContentLoaded', () => {
-        const hackerText = document.getElementById("hacker-text");
-        const originalText = hackerText.dataset.value;
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%&";
-
-        hackerText.onmouseover = () => {
+        // This function contains the scramble logic
+        const scrambleText = (element) => {
+            const originalText = element.dataset.value;
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%&";
             let iterations = 0;
+
             const interval = setInterval(() => {
-                hackerText.innerText = originalText.split("")
+                element.innerText = originalText.split("")
                     .map((letter, index) => {
                         if (index < iterations) {
                             return originalText[index];
@@ -742,9 +740,19 @@
                     clearInterval(interval);
                 }
 
-                iterations += 1 / 3;
-            }, 30);
+                iterations += 1 / 2; // Scramble speed
+            }, 40); // Interval speed
         };
+
+        // This function runs when the page is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const hackerTextElement = document.getElementById("hacker-text");
+
+            // Wait for 500 milliseconds (half a second) before running the scramble.
+            // This gives time for the initial fade-in animation to be noticeable.
+            setTimeout(() => {
+                scrambleText(hackerTextElement);
+            }, 500);
         });
 </script>
 </body>
